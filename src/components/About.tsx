@@ -12,7 +12,7 @@ const About = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (sectionRef.current) {
@@ -50,7 +50,9 @@ const About = () => {
       <div className="container px-4 md:px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
-          <div className={`mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div
+            className={`mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          >
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               <span className="text-accent font-mono text-lg md:text-xl">01.</span> About Me
             </h2>
@@ -60,26 +62,31 @@ const About = () => {
           {/* Content Grid */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Bio */}
-            <div className={`space-y-4 transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}>
+            <div
+              className={`space-y-4 transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
+            >
               <p className="text-muted-foreground leading-relaxed">
-                I'm a software engineer with a passion for building scalable, intelligent systems. 
-                Currently working on <span className="text-accent font-semibold">AI-powered insights platforms</span> at Walmart, 
-                where I architect solutions that process runtime signals and leverage GenAI for faster incident resolution.
+                I'm a software engineer with a passion for building scalable, intelligent systems. Currently working as{" "}
+                <span className="text-accent font-semibold">AI Engineer contractor</span> at Walmart, where I architect
+                solutions that process runtime signals and leverage GenAI for faster incident resolution.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                With experience spanning <span className="text-primary font-semibold">DevOps automation</span>, 
-                <span className="text-primary font-semibold"> cloud architecture</span>, and 
-                <span className="text-primary font-semibold"> AI/ML integration</span>, I specialize in creating robust 
+                With experience spanning <span className="text-primary font-semibold">DevOps automation</span>,
+                <span className="text-primary font-semibold"> cloud architecture</span>, and
+                <span className="text-primary font-semibold"> AI/ML integration</span>, I specialize in creating robust
                 CI/CD pipelines, microservices, and tools that save hundreds of engineering hours.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I hold a <span className="text-foreground font-semibold">Master's in Computer Science</span> from UNC Charlotte (GPA 3.9/4.0) 
-                and have contributed to high-impact projects at <span className="text-foreground">Avaya</span> and <span className="text-foreground">Cognizant</span>.
+                I hold a <span className="text-foreground font-semibold">Master's in Computer Science</span> from UNC
+                Charlotte (GPA 3.9/4.0) and have contributed to high-impact projects at{" "}
+                <span className="text-foreground">Avaya</span> and <span className="text-foreground">Cognizant</span>.
               </p>
             </div>
 
             {/* Highlights Grid */}
-            <div className={`grid grid-cols-2 gap-4 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}>
+            <div
+              className={`grid grid-cols-2 gap-4 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
+            >
               {highlights.map((item, index) => (
                 <div
                   key={item.title}
