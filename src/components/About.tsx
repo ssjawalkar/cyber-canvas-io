@@ -66,9 +66,9 @@ const About = () => {
               className={`space-y-4 transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
             >
               <p className="text-muted-foreground leading-relaxed">
-                I'm a software engineer with a passion for building scalable, intelligent systems. Currently working as{" "}
+                I'm a software engineer with a passion for building scalable, intelligent systems. Currently working as an{" "}
                 <span className="text-accent font-semibold">AI Engineer contractor</span> at Walmart, where I architect
-                solutions that process runtime signals and leverage GenAI for faster incident resolution.
+                solutions and build scalable applications leveraging GenAI technologies.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 With experience spanning <span className="text-primary font-semibold">DevOps automation</span>,
