@@ -5,6 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // For GitHub Pages: set base to your repo name (e.g., '/portfolio/')
+  // For development and Replit: use root path '/'
+  base: mode === 'production' ? (process.env.VITE_BASE_PATH || '/') : '/',
+  
   server: {
     host: "0.0.0.0",
     port: 5000,
@@ -20,7 +24,7 @@ export default defineConfig(({ mode }) => ({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "dist/public"),
+    outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
 }));
