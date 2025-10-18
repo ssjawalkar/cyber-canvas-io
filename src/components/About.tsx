@@ -1,5 +1,6 @@
 import { Code2, Cloud, Cpu, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import profileImage from "@/assets/samihan.jpeg";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,9 +62,23 @@ const About = () => {
 
           {/* Content Grid */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Profile Image */}
+            <div
+              className={`transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
+            >
+              <div className="relative w-64 h-64 mx-auto">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 blur-2xl" />
+                <img
+                  src={profileImage}
+                  alt="Samihan Jawalkar"
+                  className="relative w-full h-full object-cover rounded-2xl border-2 border-accent/30 shadow-[0_0_40px_rgba(6,182,212,0.3)]"
+                />
+              </div>
+            </div>
+
             {/* Bio */}
             <div
-              className={`space-y-4 transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
+              className={`space-y-4 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
             >
               <p className="text-muted-foreground leading-relaxed">
                 I'm a software engineer with a passion for building scalable, intelligent systems. Currently working as an{" "}
@@ -82,23 +97,23 @@ const About = () => {
                 <span className="text-foreground">Avaya</span> and <span className="text-foreground">Cognizant</span>.
               </p>
             </div>
+          </div>
 
-            {/* Highlights Grid */}
-            <div
-              className={`grid grid-cols-2 gap-4 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
-            >
-              {highlights.map((item, index) => (
-                <div
-                  key={item.title}
-                  className="group p-6 rounded-xl bg-card/30 backdrop-blur-sm border border-border hover:border-accent/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-300"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <item.icon className="h-8 w-8 text-accent mb-3 group-hover:scale-110 transition-transform" />
-                  <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                </div>
-              ))}
-            </div>
+          {/* Highlights Grid */}
+          <div
+            className={`grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          >
+            {highlights.map((item, index) => (
+              <div
+                key={item.title}
+                className="group p-6 rounded-xl bg-card/30 backdrop-blur-sm border border-border hover:border-accent/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-300"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <item.icon className="h-8 w-8 text-accent mb-3 group-hover:scale-110 transition-transform" />
+                <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

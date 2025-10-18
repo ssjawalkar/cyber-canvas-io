@@ -86,12 +86,6 @@ const Projects = () => {
                 } ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                {/* Featured Badge */}
-                {project.featured && (
-                  <div className="absolute -top-3 left-6 px-3 py-1 bg-gradient-to-r from-accent to-primary rounded-full text-xs font-mono font-semibold text-background">
-                    Featured
-                  </div>
-                )}
 
                 <div className="flex flex-col h-full">
                   {/* Project Header */}
